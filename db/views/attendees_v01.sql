@@ -1,5 +1,5 @@
 SELECT
-  id::text,
+  CAST(id AS TEXT),
   first_name, last_name, email,
   diet, songs, notes, NULL as child,
   updated_at

@@ -24,7 +24,8 @@ $body-color: rgba(28, 13, 10, 0.7);
 $headings-color: rgba(28, 13, 10, 0.7);
 
 $theme-colors: (
-  "primary": #ff745c
+  // "primary": #5FB075
+    "primary": #7AC48E
 );
 
 $enable-rounded: false;
@@ -32,6 +33,8 @@ $enable-rounded: false;
 @import "bootstrap";
 @import "guests";
 @import "welcome";
+@import "bootstrap/functions";
+@import "bootstrap/variables";
 
 h1 {
   font-size: 60px;

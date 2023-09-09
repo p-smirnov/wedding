@@ -30,8 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  wedding_name: "Jack & Jill's Wedding"
-  wedding_couple_names: 'Jack & Jill'
-  wedding_date: 'Saturday, 1 January 2000'
-  wedding_location: 'South Pole'
-  photo_credits: 'Photo Credits: Pexels'
+  wedding_name: "Conny and Petr's Wedding"
+  wedding_couple_names: 'Conny & Petr'
+  wedding_date: 'Friday, May 24, 2024'
+  wedding_location: 'Schloss Wiesenthau, Bavaria, Germany'
+  photo_credits: 'Photo Credits: Spike (Wikimedia Commons)'
