@@ -1,28 +1,36 @@
-name: CI
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# GitHub recommends pinning actions to a commit SHA.
+# To get a newer version, you will need to update the SHA.
+# You can also reference a tag or branch, but the action may change without warning.
+
+name: Ruby
+
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  test:
+
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-
-    - run: cp development.env.template development.env
-    - run: docker-compose --file docker-compose.yml --file docker-compose.ci.yml build
-    - run: docker-compose --file docker-compose.yml --file docker-compose.ci.yml up -d db
-    - run: docker-compose --file docker-compose.yml --file docker-compose.ci.yml run --rm web bash -lc 'bin/rails db:create db:migrate'
-    - run: docker-compose --file docker-compose.yml --file docker-compose.ci.yml run --rm web bash -lc 'bundle exec rubocop --lint'
-    - run: docker-compose --file docker-compose.yml --file docker-compose.ci.yml run --rm web bash -lc 'bin/rails test'
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+        with:
+          ruby-version: '3.0.0'
+      - name: Install dependencies
+        run: bundle install
+      - name: Create Test DB
+        run: bin/rails -e test db:create db:migrate
+      - name: Lint
+        run: bundle exec rubocop --lint
+      - name: Run tests
+        run: bundle exec rake

@@ -29,13 +29,13 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  wedding_name: "Conny and Petr's Wedding"
+de:
+  wedding_name: "Conny und Petrs Hochzeit"
   wedding_couple_names: 'Conny & Petr'
-  wedding_date: 'Friday, May 24, 2024'
+  wedding_date: 'Freitag, 24. Mai 2024'
   wedding_location: 'Schloss Wiesenthau, Bavaria, Germany'
   photo_credits: 'Photo Credits: Spike (Wikimedia Commons)'
   wedding_address_html: '<strong>Schloss Wiesenthau</strong><br>
-                         Forchheim, Bavaria<br>
-                         Germany'
-  rsvp: 'RSVP Today!'
+                         Forchheim, Bayern<br>
+                         Deutschland'
+  rsvp: 'RSVP'

@@ -16,12 +16,14 @@ gem 'sqlite3'
 gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+# Use Terser as compressor for JavaScript assets
+# gem 'uglifier', '>= 1.3.0'
+gem 'terser'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 gem 'i18n'
+gem 'rails-i18n', '~> 7.0.0' # For 7.0.0
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
@@ -38,6 +40,7 @@ gem 'scenic'
 gem 'scenic_sqlite_adapter'
 
 gem 'ransack', '>= 2.5.0'
+gem 'passenger'
 
 group :development, :test do
   gem 'rubocop'
@@ -46,6 +49,12 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem "capistrano", "~> 3.17", require: false
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-passenger'
+  gem 'capistrano-bundler', '~> 2.0'
+  gem "capistrano-secrets-yml"
 end
 
 group :development do

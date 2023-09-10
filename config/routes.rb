@@ -4,15 +4,19 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get 'welcome/index'
+  scope "(:locale)", locale: /en|de/ do
+    get 'welcome', to: 'welcome#index'
 
-  resources :guests do
-    resources :plus_ones
-    member do
-      get :confirm
-      patch :complete
+    resources :guests do
+      resources :plus_ones
+      member do
+        get :confirm
+        patch :complete
+      end
     end
   end
+
+  get '/:locale' => 'welcome#index'
 
   root 'welcome#index'
 

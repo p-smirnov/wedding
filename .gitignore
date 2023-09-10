@@ -22,3 +22,4 @@
 /development.env
 
 *.sqlite3
+config/secrets.yml
