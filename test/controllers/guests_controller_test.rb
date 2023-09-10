@@ -7,7 +7,7 @@ class GuestsControllerTest < ActionDispatch::IntegrationTest
     guest_one = guests(:one)
     guest_two = guests(:two)
 
-    patch guest_path(guest_one), params: {
+    patch guest_path(guest_one, locale: :en), params: {
       guest: { email: guest_two.email }
     }
 
@@ -17,7 +17,7 @@ class GuestsControllerTest < ActionDispatch::IntegrationTest
   test 'records confirmed_at time' do
     guest_one = guests(:one)
 
-    patch complete_guest_path(guest_one), params: { guest: { notes: '' } }
+    patch complete_guest_path(guest_one, locale: :de), params: { guest: { notes: '' } }
 
     guest_one.reload
     assert guest_one.confirmed_at
