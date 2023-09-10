@@ -53,6 +53,7 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano-passenger'
   gem 'capistrano-bundler', '~> 2.0'
+  gem "capistrano-secrets-yml"
 end
 
 group :development do
