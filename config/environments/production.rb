@@ -106,6 +106,6 @@ Rails.application.configure do
 
 
   # Rails >= 5.2
-  config.require_master_key = true 
-  config.read_encrypted_secrets = true
+  # config.require_master_key = true 
+  # config.read_encrypted_secrets = true
 end
