@@ -7,10 +7,6 @@
 server "conny-and-petr.com", user: "deploy", roles: %w{app web}#, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-## Keep number of versions on server
-
-:keep_releases, 3 ## don't have much space!
-
 
 
 

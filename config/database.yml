@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: db/wedding_production.sqlite3
+  database: /var/www/wedding_website/shared/db/production.sqlite3
   #username: wedding
   #password: <%= ENV['WEDDING_DATABASE_PASSWORD'] %>
