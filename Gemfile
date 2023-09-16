@@ -35,7 +35,7 @@ gem 'auto_strip_attributes'
 gem 'bootstrap', '~>4.3.0'
 gem 'jquery-rails'
 gem 'rack-canonical-host'
-gem 'recaptcha', require: 'recaptcha/rails'
+gem 'recaptcha', '>=5.15.0' ,require: 'recaptcha/rails'
 gem 'scenic'
 gem 'scenic_sqlite_adapter'
 
