@@ -5,7 +5,7 @@
       <%= render partial: 'guests/rsvp_nav', locals: { active: 2 } %>
 
       <h2>Plus Ones</h2>
-      <p>Please let us know below if you're bringing someone else to the wedding. Children are also very welcome.
+      <p>Please let us know below if you're bringing someone else to the wedding. Children and dogs are welcome.
       <p>&nbsp;</p>
 
       <% if @plus_ones.any? %>
@@ -19,7 +19,7 @@
 
       <p>&nbsp;</p>
       <p class="guests-buttons">
-        <%= link_to 'Continue', confirm_guest_path(@guest), class: 'btn btn-primary' %>
+        <%= link_to 'Continue', more_info_guest_path(@guest), class: 'btn btn-primary' %>
       </p>
     </div>
   </div>

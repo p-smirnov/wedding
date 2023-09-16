@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       member do
         get :confirm
         patch :complete
+        get :more_info
       end
     end
   end

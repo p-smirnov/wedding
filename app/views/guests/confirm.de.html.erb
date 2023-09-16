@@ -2,7 +2,7 @@
   <div class="row">
     <div class="offset-lg-2 col-lg-8">
       <%= render partial: 'leader' %>
-      <%= render partial: 'rsvp_nav', locals: { active: 3 } %>
+      <%= render partial: 'rsvp_nav', locals: { active: 4 } %>
 
       <h2>Confirm</h2>
 
@@ -47,6 +47,30 @@
                 <pre><%= @guest.songs %></pre>
               <% else %>
                 <p>(None)</p>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              Staying Overnight?
+            </div>
+            <div class="col-md-8">
+              <% if @guest.staying_overnight %>
+                <p>Yes</p>
+              <% else %>
+                <p>No</p>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              Bringing a Dog?
+            </div>
+            <div class="col-md-8">
+              <% if @guest.dog %>
+                <p>Yes</p>
+              <% else %>
+                <p>No</p>
               <% end %>
             </div>
           </div>

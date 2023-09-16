@@ -33,7 +33,7 @@ class Guest < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["attending", "confirmed_at", "created_at", "diet", "email", "first_name", "id", "last_name", "notes", "songs", "token", "updated_at", "plus_ones_count"]
+    ["attending", "confirmed_at", "created_at", "dog", "diet", "email", "first_name", "id", "last_name", "notes", "songs", "token", "updated_at", "plus_ones_count", "staying_overnight"]
   end
 
   def self.ransackable_associations(auth_object = nil)
