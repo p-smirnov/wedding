@@ -22,7 +22,7 @@ class GuestsController < ApplicationController
       return
     end
 
-    if not ENV['RECAPTCHA_SECRET_KEY'].blank? && verify_recaptcha(model: @guest)
+    if (not ENV['RECAPTCHA_SECRET_KEY'].blank?) && verify_recaptcha(model: @guest)
       logger.info "Recaptcha passed for guest #{guest_params[:email]}"
     end
 
