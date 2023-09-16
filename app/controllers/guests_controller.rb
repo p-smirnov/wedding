@@ -11,21 +11,19 @@ class GuestsController < ApplicationController
     respond_to :html
 
     @guest = Guest.new(guest_params)
+    recaptcha_res = verify_recaptcha(model: @guest)
 
     if ENV['RECAPTCHA_SECRET_KEY'].blank?
       logger.info "Recaptcha not configured"
     end
-    logger.info "Recaptcha secret key: #{ENV['RECAPTCHA_SECRET_KEY']}"
-    logger.info verify_recaptcha(model: @guest)
 
-    
-    unless ENV['RECAPTCHA_SECRET_KEY'].blank? || verify_recaptcha(model: @guest)
+    unless ENV['RECAPTCHA_SECRET_KEY'].blank? || recaptcha_res
       logger.info "Recaptcha failed for guest #{guest_params[:email]}"
       render :new
       return
     end
 
-    if (not ENV['RECAPTCHA_SECRET_KEY'].blank?) && verify_recaptcha(model: @guest)
+    if (not ENV['RECAPTCHA_SECRET_KEY'].blank?) && recaptcha_res
       logger.info "Recaptcha passed for guest #{guest_params[:email]}"
     end
 
