@@ -11,9 +11,20 @@ class GuestsController < ApplicationController
     respond_to :html
 
     @guest = Guest.new(guest_params)
-    unless ENV['RECAPTCHA_SECRET_KEY'].blank? || verify_recaptcha(model: @guest)
+    recaptcha_res = verify_recaptcha(model: @guest)
+
+    if ENV['RECAPTCHA_SECRET_KEY'].blank?
+      logger.info "Recaptcha not configured"
+    end
+
+    unless ENV['RECAPTCHA_SECRET_KEY'].blank? || recaptcha_res
+      logger.info "Recaptcha failed for guest #{guest_params[:email]}"
       render :new
       return
+    end
+
+    if (not ENV['RECAPTCHA_SECRET_KEY'].blank?) && recaptcha_res
+      logger.info "Recaptcha passed for guest #{guest_params[:email]}"
     end
 
     if @guest.save
@@ -40,7 +51,9 @@ class GuestsController < ApplicationController
     @guest = Guest.find_by_id_token(params[:id])
 
     if @guest.update(guest_params)
-      if @guest.attending?
+      if params[:guest].include?(:staying_overnight)
+        redirect_to confirm_guest_path(@guest)
+      elsif @guest.attending?
         redirect_to guest_plus_ones_path(@guest)
       else
         redirect_to confirm_guest_path(@guest)
@@ -48,6 +61,14 @@ class GuestsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def more_info
+    respond_to :html
+
+    @guest = Guest.find_by_id_token(params[:id])
+
+
   end
 
   def confirm
@@ -71,7 +92,7 @@ class GuestsController < ApplicationController
 
   def guest_params
     params.require(:guest).permit(
-      :email, :first_name, :last_name, :attending, :diet, :songs, :notes
+      :email, :first_name, :last_name, :attending, :diet, :songs, :notes, :staying_overnight, :dog
     )
   end
 end

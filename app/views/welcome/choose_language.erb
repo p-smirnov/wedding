@@ -1,0 +1,25 @@
+<main role="main">
+  <section id="welcome-index-leader" class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading"><%= t :wedding_couple_names %></h1>
+    <p class="leader-date">
+      <%= t :wedding_date %> <br>
+      <%= t :wedding_location %>
+    </p>
+    <p>
+    <table id='language-table'>
+    <tr>
+    <td>  
+      <%= link_to "Deutsch, bitte!", "/de", class: 'btn btn-primary wedding-cta-btn language-link' %>
+    </td>
+    <td>  
+      <%= link_to "English, please!", "/en", class: 'btn btn-primary wedding-cta-btn language-link' %>
+    </td>
+      </tr>
+    </table>
+    </p>
+    </p>
+  </div>
+</section>
+
+</main>

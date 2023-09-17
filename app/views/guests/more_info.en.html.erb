@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-lg-2 col-lg-8">
+      <%= render partial: 'leader' %>
+      <%= render partial: 'rsvp_nav', locals: { active: 3 } %>
+
+      <h2>About You</h2>
+
+      <%= form_with(model: @guest, method: :patch, local: true, id: 'guest-edit-form') do |form| %>
+      <div class="row">
+        <div class="col-md-12">
+          <%= errors_for(@guest) %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-md-6">
+          <%= form.label :songs, 'Song Suggestions', class: 'col-form-label' %>
+        </div>
+        <div class="col-md-6">
+          <%= form.text_area :songs, id: 'guest_songs', class: 'form-control' %>
+          <small class="form-text text-muted">We are crowd sourcing our playlist! Choose some songs you'd like to hear.</small>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <div class="col-md-12">
+ 
+            <small class="form-text text-muted">We are negotiating a group rate with nearby hotels, your answer helps us get everyone cheaper rates.</small>      
+        </div>
+        
+        <div class="col-md-6">
+          <%= form.label :staying_overnight, 'Do you plan to stay overnight?', class: 'col-form-label' %>
+        </div>
+        <div class="col-md-6, form-check, form-check-inline">
+            <div class="form-check form-check-inline">
+                <%= form.radio_button :staying_overnight, 'false', checked: true, id: 'guest_staying_overnight_false', class: 'form-check-input' %>
+                <%= form.label :staying_overnight, 'No', value: 'false', class: 'form-check-label' %>
+            </div> 
+            <div class="form-check form-check-inline">
+                <%= form.radio_button :staying_overnight, 'true', id: 'guest_staying_overnight_true', class: 'form-check-input' %>
+                <%= form.label :staying_overnight, 'Yes', value: 'true', class: 'form-check-label' %>
+            </div>      
+          </div>
+
+      </div>
+
+
+      <div class="form-group row">
+        <div class="col-md-6">
+          <%= form.label :dog, 'Would you like to bring a four-legged friend to the party?', class: 'col-form-label' %>
+        </div>
+        <div class="col-md-6, form-check, form-check-inline">
+            <div class="form-check form-check-inline">
+                <%= form.radio_button :dog, 'false', checked: true, id: 'guest_dog_false', class: 'form-check-input' %>
+                <%= form.label :dog, 'No', value: 'false', class: 'form-check-label' %>
+            </div> 
+            <div class="form-check form-check-inline">
+                <%= form.radio_button :dog, 'true', id: 'guest_dog_true', class: 'form-check-input' %>
+                <%= form.label :dog, 'Yes', value: 'true', class: 'form-check-label' %>
+            </div>     
+          </div>
+
+      </div>
+
+
+        <div class="col-md-6 text-center">
+          <%= form.submit 'Continue', class: 'btn btn-primary', data: { disable_with: 'Sending...' } %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

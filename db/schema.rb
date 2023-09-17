@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2018_08_04_103058) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_16_160720) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -54,6 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2018_08_04_103058) do
     t.string "first_name"
     t.string "last_name"
     t.datetime "confirmed_at", precision: nil
+    t.boolean "staying_overnight"
+    t.boolean "dog"
     t.index ["email"], name: "index_guests_on_email", unique: true
   end
 
@@ -65,6 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2018_08_04_103058) do
     t.datetime "updated_at", precision: nil, null: false
     t.string "first_name"
     t.string "last_name"
+    t.boolean "child_under_three"
     t.index ["guest_id"], name: "index_plus_ones_on_guest_id"
   end
 

@@ -6,12 +6,10 @@ class GuestMailer < ApplicationMailer
   def confirmation_email(guest)
 
     @guest = guest
-    # I18n.with_locale(locale) do
       mail(
         to: guest.name_with_email,
         subject: "#{I18n.t(:wedding_name)}: RSVP Confirmation"
       )
-    # end
   end
 
   def welcome_back_email(guest)

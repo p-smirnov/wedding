@@ -6,12 +6,13 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|de/ do
     get 'welcome', to: 'welcome#index'
-
+    get '/choose_language', to: 'welcome#choose_language'
     resources :guests do
       resources :plus_ones
       member do
         get :confirm
         patch :complete
+        get :more_info
       end
     end
   end

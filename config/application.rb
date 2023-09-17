@@ -27,6 +27,8 @@ module Wedding
     config.i18n.available_locales = %i[en de]
     config.i18n.default_locale = :en
 
+    
+
     # config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}')]
 
     # Settings in config/environments/* take precedence over those specified here.
