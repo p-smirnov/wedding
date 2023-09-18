@@ -4,7 +4,7 @@
       <%= render partial: 'leader' %>
       <%= render partial: 'rsvp_nav', locals: { active: 4 } %>
 
-      <h2>Confirm</h2>
+      <h2>Bestätigung</h2>
 
       <%= form_with(model: @guest, url: complete_guest_path(@guest), local: true) do |form| %>
       <div class="row">
@@ -14,13 +14,13 @@
       </div>
 
       <% if @guest.attending? %>
-      <h3>Your Details</h3>
+      <h3>Deine Details</h3>
       <div class="card mb-3">
         <h5 class="card-header"><%= @guest.name %></h5>
         <div class="card-body">
           <div class="row">
             <div class="col-md-4">
-              Email
+              E-Mail
             </div>
             <div class="col-md-8">
               <p><tt><%= @guest.email %></tt></p>
@@ -28,7 +28,7 @@
           </div>
           <div class="row">
             <div class="col-md-4">
-              Dietary Preferences
+              Allergien und Ernährungsvorlieben
             </div>
             <div class="col-md-8">
               <% if @guest.diet.present? %>
@@ -40,7 +40,7 @@
           </div>
           <div class="row">
             <div class="col-md-4">
-              Song Suggestions
+              Musikvorschläge
             </div>
             <div class="col-md-8">
               <% if @guest.songs.present? %>
@@ -52,7 +52,7 @@
           </div>
           <div class="row">
             <div class="col-md-4">
-              Staying Overnight?
+              Übernachtung
             </div>
             <div class="col-md-8">
               <% if @guest.staying_overnight %>
@@ -64,7 +64,7 @@
           </div>
           <div class="row">
             <div class="col-md-4">
-              Bringing a Dog?
+              Vierbeiniger Freund?
             </div>
             <div class="col-md-8">
               <% if @guest.dog %>
@@ -82,21 +82,21 @@
         </div>
       </div>
 
-      <h3>Plus Ones</h3>
+      <h3>Gäste</h3>
       <% if @guest.plus_ones.any? %>
         <%= render @guest.plus_ones %>
       <% else %>
         <p>(None &mdash; just you.)</p>
       <% end %>
       <% else %>
-      <p>Sorry to hear you won't be joining us!</p>
-      <h3>Your Details</h3>
+      <p>Schade, dass du es nicht schaffen wirst!</p>
+      <h3>Deine Details</h3>
       <div class="card mb-3">
         <h5 class="card-header"><%= @guest.name %></h5>
         <div class="card-body">
           <div class="row">
             <div class="col-md-4">
-              Email
+              E-Mail
             </div>
             <div class="col-md-8">
               <p><tt><%= @guest.email %></tt></p>
@@ -106,14 +106,14 @@
       </div>
       <% end %>
 
-      <h3>Other Comments?</h3>
+      <h3>Weitere Anregungen?</h3>
 
       <%= form.text_area :notes, class: 'form-control' %>
-      <small class="form-text text-muted">Anything else you'd like to let us know?</small>
+      <small class="form-text text-muted">Gibt es noch etwas anderes, dass du uns gerne wissen lassen würdest?</small>
 
       <div class="row guests-buttons">
         <div class="offset-md-3 col-md-6 text-center">
-          <%= form.submit 'Complete RSVP', class: 'btn btn-primary', data: { disable_with: 'Sending...' } %>
+          <%= form.submit 'Die Anmeldung abschließen', class: 'btn btn-primary', data: { disable_with: 'Sending...' } %>
         </div>
       </div>
       <% end %>
