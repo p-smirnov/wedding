@@ -4,7 +4,7 @@
       <%= render partial: 'leader' %>
       <%= render partial: 'rsvp_nav', locals: { active: 1 } %>
 
-      <h2>About You</h2>
+      <h2>Über dich</h2>
 
       <%= form_with(model: @guest, method: :patch, local: true, id: 'guest-edit-form') do |form| %>
       <div class="row">
@@ -27,7 +27,7 @@
 
       <div class="form-group row">
         <div class="offset-md-3 col-md-9">
-          <p><strong>Will you be joining us?</strong></p>
+          <p><strong>Wirst du dabei sein?</strong></p>
           <div class="form-check form-check-inline">
             <%= form.radio_button :attending, 'true', checked: true, id: 'guest_attending_true', class: 'form-check-input' %>
             <%= form.label :attending, 'Yes', value: 'true', class: 'form-check-label' %>
@@ -48,7 +48,7 @@
         </div>
         <div class="col-md-9">
           <%= form.text_area :songs, id: 'guest_songs', class: 'form-control' %>
-          <small class="form-text text-muted">We're crowd sourcing our playlist! Choose some songs you'd like to hear.</small>
+          <small class="form-text text-muted">Wir stellen eine Playliste mit den Lieblingssongs unserer Gäste zusammen. Trag hier einfach ein paar Songs ein, die du gerne hören möchtest!</small>
         </div>
       </div>
       </div>
