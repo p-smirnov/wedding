@@ -1,24 +1,25 @@
 <p><%= @guest.email_safe_salutation %></p>
 
 <% if @guest.attending %>
-<p>We look forward to seeing you!</p>
-<p>The address is:</p>
+<p>Wir freuen uns schon auf dich!</p>
+<p>Die Adresse ist:</p>
 <address><%= render partial: 'application/wedding_address' %></address>
 
-<h3>Your RSVP</h3>
-<p>If you would like to view or update your RSVP, you can use the following link to get back to it:</p>
+<h3>Deine Anmeldung</h3>
+<p>Falls du deine angegebenen Daten nochmals ansehen oder ändern möchtest, kannst du dies unter dem folgenden Link tun:</p>
 <p><%= link_to guest_url(@guest, locale: I18n.locale), guest_url(@guest, locale: I18n.locale) %></p>
 
-<h3>Sending a Card?</h3>
-<p>If you need it, our mailing address is:</p>
+<h3>Möchtest du uns eine Karte schicken?</h3>
+<p>Falls du unsere Postadresse brauchst:</p>
 <address><%= render partial: 'application/mailing_address' %></address>
 
-<h3>Questions and answers</h3>
-<p>Please check <%= link_to 'our wedding website', root_url %> for more information, or you can reply to this email.</p>
+<h3>Fragen und Antworten</h3>
+<p>Wir updaten die Website immer wieder mit mehr Informationen, also schau gerne zu einem späteren Zeitpunkt nochmal vorbei: <%= link_to 'our wedding website', root_url %>.</p>
+<p>Falls du noch weitere Fragen hast, kannst du auch gerne auf diese E-Mail antworten und wir helfen dir gerne weiter.</p>
 <% else %>
-<p>We're sorry to hear you can't make it. If you change your mind, you can update your RSVP with the link below:</p>
+<p>Schade, dass du es leider nicht zu unserer Hochzeit schaffen wirst. Falls sich deine Pläne noch ändern, kannst du uns unter dem unten stehenden Link gerne noch Bescheid geben:</p>
 <p><%= link_to guest_url(@guest, locale: I18n.locale), guest_url(@guest, locale: I18n.locale) %></p>
-<p>We hope to see you another time!</p>
+<p>Hoffentlich sehen wir uns bald wieder!</p>
 <% end %>
 
 <p>&nbsp;</p>
