@@ -2,11 +2,11 @@
   <div class="row">
     <div class="offset-lg-2 col-lg-8">
       <%= render partial: 'leader' %>
-      <h2>Thanks!</h2>
-      <p>We've sent an email confirmation to <tt><%= @guest.email %></tt>.</p>
-      <p>If you don't receive the email within a few minutes, please check your spam folder, and if it's not there <%= mail_to ENV['CONTACT_EMAIL'], 'contact us' %>.</p>
-      <p>The email contains a link that you can use to update your RSVP later if you need to.</p>
-      <p><%= link_to 'Back to the Home Page', root_path %></p>
+      <h2>Danke!</h2>
+      <p>Wir haben dir eine Bestätigung per E-Mail an <tt><%= @guest.email %></tt> geschickt.</p>
+      <p>Falls du diese nicht innerhalb von ein paar Minuten erhältst, schau in deinem Spamordner nach. Falls sie auch dort nicht zu finden ist, kannst du uns auch <%= mail_to ENV['CONTACT_EMAIL'], 'hier kontaktieren' %>.</p>
+      <p>Die E-Mail hat einen Link, mit dem du auch später noch deine Anmeldung bearbeiten kannst.</p>
+      <p><%= link_to 'Zurück zur Homepage', root_path %></p>
     </div>
   </div>
 </div>
