@@ -14,12 +14,12 @@
         <p>Noch keine Gäste hinzugefügt.</p>
       <% end %>
       <p>
-        <%= link_to 'Add Plus One', new_guest_plus_one_path(@guest), class: 'btn btn-primary', data: { disable_with: 'Loading...' } %>
+        <%= link_to 'Gast hinzufügen', new_guest_plus_one_path(@guest), class: 'btn btn-primary', data: { disable_with: 'Loading...' } %>
       </p>
 
       <p>&nbsp;</p>
       <p class="guests-buttons">
-        <%= link_to 'Continue', more_info_guest_path(@guest), class: 'btn btn-primary' %>
+        <%= link_to 'Weiter', more_info_guest_path(@guest), class: 'btn btn-primary' %>
       </p>
     </div>
   </div>

@@ -4,7 +4,7 @@
       <%= render partial: 'leader' %>
       <%= render partial: 'rsvp_nav', locals: { active: 4 } %>
 
-      <h2>Bestätigung</h2>
+      <h2>Übersicht</h2>
 
       <%= form_with(model: @guest, url: complete_guest_path(@guest), local: true) do |form| %>
       <div class="row">
@@ -56,9 +56,9 @@
             </div>
             <div class="col-md-8">
               <% if @guest.staying_overnight %>
-                <p>Yes</p>
+                <p>Ja</p>
               <% else %>
-                <p>No</p>
+                <p>Nein</p>
               <% end %>
             </div>
           </div>
@@ -68,15 +68,15 @@
             </div>
             <div class="col-md-8">
               <% if @guest.dog %>
-                <p>Yes</p>
+                <p>Ja</p>
               <% else %>
-                <p>No</p>
+                <p>Nein</p>
               <% end %>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 text-right">
-              <%= link_to 'Edit', guest_path(@guest), class: 'card-link', data: { disable_with: 'Loading...' } %>
+              <%= link_to 'Ändern', guest_path(@guest), class: 'card-link', data: { disable_with: 'Loading...' } %>
             </div>
           </div>
         </div>

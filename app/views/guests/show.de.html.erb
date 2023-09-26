@@ -30,11 +30,11 @@
           <p><strong>Wirst du dabei sein?</strong></p>
           <div class="form-check form-check-inline">
             <%= form.radio_button :attending, 'true', checked: true, id: 'guest_attending_true', class: 'form-check-input' %>
-            <%= form.label :attending, 'Yes', value: 'true', class: 'form-check-label' %>
+            <%= form.label :attending, 'Ja', value: 'true', class: 'form-check-label' %>
           </div>
           <div class="form-check form-check-inline">
             <%= form.radio_button :attending, 'false', id: 'guest_attending_false', class: 'form-check-input' %>
-            <%= form.label :attending, 'No', value: 'false', class: 'form-check-label' %>
+            <%= form.label :attending, 'Nein', value: 'false', class: 'form-check-label' %>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
 
       <div class="form-group row">
         <div class="col-md-3">
-          <%= form.label :songs, 'Song Suggestions', class: 'col-form-label' %>
+          <%= form.label :songs, 'Musikvorschläge', class: 'col-form-label' %>
         </div>
         <div class="col-md-9">
           <%= form.text_area :songs, id: 'guest_songs', class: 'form-control' %>
@@ -58,7 +58,7 @@
           <span class="wedding-required">* Required</span>
         </div>
         <div class="col-md-6 text-center">
-          <%= form.submit 'Continue', class: 'btn btn-primary', data: { disable_with: 'Sending...' } %>
+          <%= form.submit 'Weiter', class: 'btn btn-primary', data: { disable_with: 'Sending...' } %>
         </div>
       </div>
       <% end %>
