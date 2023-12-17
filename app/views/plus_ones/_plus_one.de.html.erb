@@ -18,7 +18,7 @@
         Kind
       </div>
       <div class="col-md-8">
-        <p><%= plus_one.child ? 'Ja' : 'Nein' %></p>
+        <p><%= plus_one.child ? 'Ja' : (plus_one.child_under_three ? 'Ja' : 'Nein') %></p>
       </div>
     </div>
     <div class="row">
