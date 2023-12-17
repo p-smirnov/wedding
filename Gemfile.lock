@@ -1,4 +1,9 @@
 GEM
+  remote: https://rails-assets.org/
+  specs:
+    rails-assets-jquery-waypoints (4.0.1)
+
+GEM
   remote: https://rubygems.org/
   specs:
     actioncable (7.0.7.2)
@@ -368,6 +373,7 @@ DEPENDENCIES
   puma
   rack-canonical-host
   rails (~> 7.0.1)
+  rails-assets-jquery-waypoints!
   rails-i18n (~> 7.0.0)
   ransack (>= 2.5.0)
   recaptcha

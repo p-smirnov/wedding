@@ -42,6 +42,10 @@ gem 'scenic_sqlite_adapter'
 gem 'ransack', '>= 2.5.0'
 gem 'passenger'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery-waypoints'
+end
+
 group :development, :test do
   gem 'rubocop'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

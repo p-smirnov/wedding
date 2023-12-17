@@ -17,3 +17,5 @@
 
 //= require_tree .
 //= stub active_admin
+//= require jquery-waypoints
+// THIS DOES NOT WORK. SHOULD PROBABLY BE UPDATED TO IMPORTMAPS AND INSTALLED THROUGH THE NPM SOURCES
