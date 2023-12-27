@@ -132,20 +132,28 @@ nav {
   top: 0%;
   width: 100%;
   position: fixed;
-  background-color: #7AC48E;
+  background-color: #7ac48ec8;
   z-index: 99999;
 }
 
 .container_nav {
-  padding: 22px;
+  padding: 12px;
   margin: 0 auto;
   text-align: center;
+  list-style-position: inside;
+}
+
+ul { 
+    padding-left: 0;
+    list-style-position: inside;
 }
 
 .container_nav ul li {
   list-style: none;
-  margin: 0 10px;
+  margin: 0 4px;
   display: inline-block;
+  white-space: nowrap;
+
 }
 
 .container_nav ul li a:hover {
@@ -163,7 +171,8 @@ nav {
 }
 
 .active {
-  border-bottom: 2px solid #d0d7d9;
+  // border-bottom: 2px solid #d0d7d9;
+  font-weight: bold;
 }
 
 .container_nav p {
@@ -171,4 +180,12 @@ nav {
   color: #fc0;
   font-weight: 700;
   font-size: 20px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+#sec-2 { 
+  min-width: 195 px;
 }
