@@ -92,6 +92,33 @@
   }
 }
 
+#welcome-index-nearby-leader {
+  background: linear-gradient(rgba(28, 13, 10, 0.4), rgba(28, 13, 10, 0.6)),
+    image-url("nearby.jpg") center center no-repeat;
+  background-size: cover;
+  margin-top: 5 * $spacer;
+
+  * {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  h1 {
+    padding: 3 * $spacer 0;
+  }
+}
+
+#welcome-index-nearby {
+  h2 {
+    padding-top: 3 * $spacer;
+    padding-bottom: $spacer;
+    text-align: center;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
+
 #welcome-index-footer {
   background-color: #faebe3;
   margin-top: 5 * $spacer;
