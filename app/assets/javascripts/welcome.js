@@ -25,7 +25,7 @@ $("#sec-2").click(function () {
     $('#sec-2').addClass("active");
     $('#sec-2').addClass("clicked");
     $('html, body').animate({
-        scrollTop: $("#welcome-index-when-where").offset().top - 112
+        scrollTop: $("#welcome-index-venue-leader").offset().top - 112
     }, 1000, complete = function () {
         $("#sec-2").removeClass("clicked");
     });
@@ -37,7 +37,7 @@ $("#sec-3").click(function () {
     $('#sec-3').addClass("active");
     $('#sec-3').addClass("clicked");
     $(' html,body').animate({
-        scrollTop: $("#welcome-index-venue-leader").offset().top - 112
+        scrollTop: $("#welcome-index-wedding-plan-leader").offset().top - 112
     }, 1000, complete = function () {
         $("#sec-3").removeClass("clicked");
     });
@@ -52,7 +52,7 @@ $("#sec-4").click(function () {
     $('#sec-4').addClass("clicked");
     // $(this).addClass("active");
     $('html,body ').animate({
-        scrollTop: $("#welcome-index-wedding-plan-leader").offset().top - 112
+        scrollTop: $("#welcome-index-nearby-leader").offset().top - 112
     }, 1000, complete = function () {
         $("#sec-4").removeClass("clicked");
     });
@@ -73,7 +73,7 @@ waypoint1 = new Waypoint({
 })
 
 waypoint2 = new Waypoint({
-    element: document.getElementById('welcome-index-when-where'),
+    element: document.getElementById('welcome-index-venue-leader'),
     handler: function () 
     {
         if (!$('.clicked').length) {
@@ -84,7 +84,7 @@ waypoint2 = new Waypoint({
 })
 
 waypoint3 = new Waypoint({
-    element: document.getElementById('welcome-index-venue-leader'),
+    element: document.getElementById('welcome-index-wedding-plan-leader'),
     handler: function () {
 
         if (!$('.clicked').length) {
@@ -95,7 +95,7 @@ waypoint3 = new Waypoint({
 })
 
     waypoint4 = new Waypoint({
-        element: document.getElementById('welcome-index-wedding-plan-leader'),
+        element: document.getElementById('welcome-index-nearby-leader'),
         handler: function () {
             if (!$('.clicked').length) {
                 $(".container_nav ul li").children().removeClass("active");
